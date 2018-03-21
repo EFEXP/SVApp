@@ -1,0 +1,9 @@
+ <form class="example-form">
+ <mat-form-field class="example-full-width">
+    <input matInput placeholder="Favorite food"  [(value)]="msg" >
+  </mat-form-field>
+  <button mat-button (click)="onSerchClick()">Basic</button>
+</form>
+<p>{{responseTxt}}</p>
+<img [src]="imageUrl" >
+<router-outlet></router-outlet>
