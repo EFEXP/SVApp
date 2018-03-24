@@ -1,0 +1,31 @@
+<form>
+<mat-form-field class="item">
+  <input matInput type="text" name="cardName" placeholder="カード名を入力してね" [(ngModel)]="query.name">
+</mat-form-field>
+<mat-form-field class="item">
+  <mat-select placeholder="クラス" [(ngModel)]="query.clan"  name="cardClan">
+      <mat-option  [value]="" >なし</mat-option>
+    <mat-option *ngFor="let k of clan_items; let i = index" [value]="i" class="checkbox-item">{{k}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field class="item">
+  <mat-select placeholder="パック" [(ngModel)]="query.cardset"  name="cardSet">
+      <mat-option  [value]="" >なし</mat-option>
+    <mat-option *ngFor="let cardset of cardset_items; let i = index" [value]="cardset_dictionary.get(cardset)" class="checkbox-item">{{cardset}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field class="item">
+  <mat-select placeholder="レアリティ" [(ngModel)]="query.rarity"  name="cardRarity">
+      <mat-option  [value]="" >なし</mat-option>
+    <mat-option *ngFor="let rarity of rarity_items; let i = index" [value]="i+1" class="checkbox-item">{{rarity}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field class="item">
+  <mat-select placeholder="カードタイプ" [(ngModel)]="query.type"  name="cardType">
+    <mat-option  [value]="" >なし</mat-option>
+    <mat-option *ngFor="let type of type_items; let i = index" [value]="i+1" class="checkbox-item">{{type}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-progress-bar mode="indeterminate" *ngIf="serching"></mat-progress-bar>
+<button mat-button (click)="onSerchClick()" type="submit" class="item" [disabled] ="serching" >検索</button>
+</form>

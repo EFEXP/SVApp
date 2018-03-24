@@ -5,27 +5,37 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
+import { Query } from './query';
 @Injectable()
 export class GetCardService {
     constructor(private http: Http) {
-    
-
      }
 
-    getCardByID(card_id: string|number): Observable<any> {
-     return   this.http.get('https://yfiq92sjoh.execute-api.ap-northeast-1.amazonaws.com/release1', { params: { id: card_id} })
-        .map(
-            responce => {
-                return responce.json() || {};
-            }
+     getCardQuery(query: Query): Observable<any> {
 
-        ).
-        catch(
-            error => {
-                return Observable.throw(error.statusText);
-            }
-        );
-    }
+        return   this.http.get('https://ifbv7znz0e.execute-api.ap-northeast-1.amazonaws.com/stage1/cards', { params:  { 
+            id: query.id,
+            type: query.type,
+            cost: query.cost,
+            cardset: query.cardset,
+            rarity: query.rarity,
+            clan: query.clan,
+            name: query.name
+        } })
+           .map(
+               responce => {
+                   return responce.json() || {};
+               }
+   
+           ).
+           catch(
+               error => {
+                   return Observable.throw(error.statusText);
+               }
+           );
+       }
+
+ 
 
     
  

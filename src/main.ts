@@ -9,6 +9,9 @@ import 'hammerjs';
 if (environment.production) {
   enableProdMode();
 }
+if (environment.production) {
+  window.console.log = function(){};
+}
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.log(err));

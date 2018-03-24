@@ -1,9 +1,26 @@
- <form class="example-form">
- <mat-form-field class="example-full-width">
-    <input matInput placeholder="Favorite food"  [(value)]="msg" >
-  </mat-form-field>
-  <button mat-button (click)="onSerchClick()">Basic</button>
-</form>
-<p>{{responseTxt}}</p>
-<img [src]="imageUrl" >
-<router-outlet></router-outlet>
+<!--<router-outlet></router-outlet>-->
+
+<mat-toolbar color="primary">
+  <span>Shadowverseサポートツール</span>
+</mat-toolbar>
+<mat-drawer-container  autosize>
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <p>Auto-resizing sidenav</p>
+        <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+        <button (click)="showFiller = !showFiller" mat-raised-button>
+          Toggle extra text
+        </button>
+      </mat-drawer>
+      <div class="example-sidenav-content">
+          <button type="button" *ngIf="false" mat-button (click)="drawer.toggle()">
+            Toggle sidenav
+          </button>
+        </div>
+  <div class="container">
+   
+
+    <app-card-search (searchFinished)="cardList=$event" class="item"></app-card-search>
+    <app-card-list *ngIf="cardList"  [cardList]="cardList" class="item" ></app-card-list>
+</div>
+
+</mat-drawer-container>

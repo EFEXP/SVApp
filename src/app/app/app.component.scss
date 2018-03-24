@@ -1,0 +1,50 @@
+
+$breakpoints: (
+  'sm': 'screen and (min-width:  576px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 992px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@include mq('sm'){
+  .container {
+    max-width: 540px;
+  }
+}
+@include mq('md'){
+  .container {
+    max-width: 720px;
+  }
+}
+@include mq('lg'){
+  .container {
+    max-width: 960px;
+  }
+}
+
+@include mq('xl'){
+  .container {
+    max-width: 1140px;
+  }
+}
+
+
+
+.item{
+  width: 100%;
+
+}

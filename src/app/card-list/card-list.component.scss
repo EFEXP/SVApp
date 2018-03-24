@@ -1,0 +1,9 @@
+.card-list-item{
+    flex: 1 1 0;
+    min-width: 25%;
+    margin: 4px;
+}
+.card-list-container{
+    display: flex;
+    flex-wrap: wrap;
+}
