@@ -13,7 +13,9 @@ export class Card {
         public id: string,
         public skilldescription: string,
         public evoskilldescription: string,
-        public tribe: string
+        public tribe: string,
+        public card_set: string,
+        public clan: string
     ) { }
     static jsonToCard(json: any): Card {
         return new Card(
@@ -29,7 +31,9 @@ export class Card {
             json['card_id'],
             json['skill_disc'],
             json['evo_skill_disc'],
-            json['tribe_name']
+            json['tribe_name'],
+            json['card_set_id'],
+            json['clan'],
         );
     }
 

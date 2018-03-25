@@ -1,0 +1,16 @@
+<div class="mat-typography">
+<h1 id="page-title">カードの詳細</h1>
+<h2>{{card.name}}</h2>
+</div>
+<div id="pic-container">
+<div  class="pic-item">
+<img  class="picture" [src]="'https://s3.ap-northeast-1.amazonaws.com/shadowverse-photos/card/'+ card.id + '0.jpg'">
+<p class="mat-body-1">"{{card.description}}"</p>
+</div>
+<div class="pic-item">
+<img class="picture" [src]="'https://s3.ap-northeast-1.amazonaws.com/shadowverse-photos/card/'+ card.id + '1.jpg'">
+<p class="mat-body-1">"{{card.evodescription}}"</p>
+</div>
+
+</div>
+

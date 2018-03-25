@@ -6,7 +6,7 @@ import { Card } from '../card';
 @Component({
   selector: 'app-card-search',
   templateUrl: './card-search.component.html',
-  styleUrls: ['./card-search.component.scss']
+  styleUrls: ['./card-search.component.scss'],
 })
 export class CardSearchComponent implements OnInit {
 
@@ -66,8 +66,8 @@ export class CardSearchComponent implements OnInit {
     this.cardset_dictionary.set("神々の騒嵐", "10004");
     this.cardset_dictionary.set("星神の伝説", "10006");
     this.cardset_dictionary.set("時空転生", "10007");
-    this.cardset_dictionary.set("クラシックカードパック再録", "70001");
-    this.cardset_dictionary.set("ダークネス・エボルヴ再録", "70002");
+    this.cardset_dictionary.set("構築済みⅠ", "70001");
+    this.cardset_dictionary.set("構築済みⅡ・エボルヴ再録", "70002");
   }
 
   onSerchClick() {

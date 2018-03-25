@@ -11,7 +11,7 @@ export class GetCardService {
     constructor(private http: Http) {
      }
 
-     getCardQuery(query: Query): Observable<any> {
+     getCardQuery(query: Query): Observable<Card[]> {
 
         return   this.http.get('https://ifbv7znz0e.execute-api.ap-northeast-1.amazonaws.com/stage1/cards', { params:  { 
             id: query.id,
@@ -24,12 +24,14 @@ export class GetCardService {
         } })
            .map(
                responce => {
-                   return responce.json() || {};
+                   const obj = responce.json();
+                   return obj.map(it => Card.jsonToCard(it))  || {};
                }
    
            ).
            catch(
                error => {
+                   console.log(error);
                    return Observable.throw(error.statusText);
                }
            );

@@ -1,12 +1,12 @@
 <mat-paginator [length]="cardList.length" pageSize="15"  (page)="getCardSliced($event.pageIndex)">
     </mat-paginator>
 <div class="card-list-container">
-    <mat-card *ngFor="let card of showCardList" class="card-list-item">
+    <mat-card *ngFor="let card of showCardList" class="card-list-item" (click)="clickCard(card)">
         <mat-card-header>
             <mat-card-title>
-                {{card.card_name}}
+                {{card.name}}
             </mat-card-title>
         </mat-card-header>
-        <img mat-card-image [src]="'https://shadowverse-portal.com/image/card/ja/C_'+ card.card_id + '.png'" />
+        <img mat-card-image [src]="'https://shadowverse-portal.com/image/card/ja/C_'+ card.id + '.png'" />
     </mat-card>
 </div>

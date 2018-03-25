@@ -1,0 +1,6 @@
+<div class="mat-typography">
+<h1 id="page-title">全カード検索</h1>
+</div>
+<mat-divider></mat-divider>
+<app-card-search (searchFinished)="cardList=$event" class="item"></app-card-search>
+<app-card-list *ngIf="cardList"  [cardList]="cardList" class="item" ></app-card-list>

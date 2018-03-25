@@ -20,10 +20,15 @@ import {MatSelectModule} from '@angular/material/select';
 import { CardListComponent } from './card-list/card-list.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { ClanPipe } from './clan.pipe';
 import { CardSearchComponent } from './card-search/card-search.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MainpageComponent } from './mainpage/mainpage.component';
+import { CardDetailpageComponent } from './card-detailpage/card-detailpage.component';
+import { GetCardService } from './getCard.service';
+import { DataKeeperService } from './data-keeper.service';
+import {MatDividerModule} from '@angular/material/divider';
+
 @NgModule({
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
@@ -32,8 +37,9 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     AppComponent,
     CardDetailComponent,
     CardListComponent,
-    ClanPipe,
-    CardSearchComponent
+    CardSearchComponent,
+    MainpageComponent,
+    CardDetailpageComponent
   ],
   imports: [
     BrowserModule,
@@ -52,10 +58,11 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatSelectModule,
     MatSidenavModule,
     MatPaginatorModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatDividerModule
   ],
 
-  providers: [],
+  providers: [GetCardService, DataKeeperService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
