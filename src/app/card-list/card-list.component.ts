@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, OnChanges, SimpleChanges, OnDestroy, DoCheck } from '@angular/core';
 import { PageEvent } from '@angular/material';
 import { Card } from '../card';
 import { Router } from '@angular/router';
@@ -19,6 +19,7 @@ export class CardListComponent  implements OnChanges{
       this.showCardList = this.cardList.slice(0, 15);
      }
   }
+
  clickCard(card){
     this.keeper.card = card;
     this.router.navigate(['/detail']);

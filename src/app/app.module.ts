@@ -52,6 +52,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MatCardModule,
     FormsModule,
     MatMenuModule,
+    MatGridListModule,
     MatIconModule,
     MatToolbarModule,
     MatRadioModule,
@@ -59,7 +60,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatSidenavModule,
     MatPaginatorModule,
     MatProgressBarModule,
-    MatDividerModule
+    MatDividerModule,
+
   ],
 
   providers: [GetCardService, DataKeeperService],

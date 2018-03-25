@@ -1,14 +1,19 @@
-#page-title{
-    padding-top: 8px;
-}
 #pic-container {
     display: flex;
     flex-direction: column;
 }
 .pic-item {
-  
-  max-width: 90%;
-   margin: 0 auto;
+   max-width: 100%;
+   text-align: center;
 }
+
 .picture {
+    max-width:70%;
  }
+  @media  (min-width: 980px) {
+    .picture {
+        max-width:300px;
+     }
+    }
+    
+

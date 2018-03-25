@@ -13,6 +13,7 @@ export class CardDetailpageComponent implements OnInit {
   constructor(private route : ActivatedRoute, public keeper : DataKeeperService ) { }
 
   ngOnInit() {
+    this.keeper.pagename.next("詳細");
     this.card = this.keeper.card;
     console.log(this.keeper.card);
     

@@ -1,9 +1,61 @@
+import { DataKeeperService } from "./data-keeper.service";
 
 export class Card {
-    constructor(
+    static   cardset_items = [
+        "トークン"
+        , "ベーシックカード"
+        , "クラシックカードパック"
+        , "ダークネス・エボルヴ"
+        , "バハムート降臨"
+        , "神々の騒嵐"
+        , "ワンダーランド・ドリームズ"
+        , "星神の伝説"
+        , "時空転生"
+        , "構築済み第一弾"
+        , "構築済み第二弾"
+      ];
+      static  clan_items = [
+        "ニュートラル"
+        , "エルフ"
+        , "ロイヤル"
+        , "ウィッチ"
+        , "ドラゴン"
+        , "ネクロマンサー"
+        , "ヴァンパイア"
+        , "ビショップ"
+        , "ネメシス"
+      ];
+      //1から
+      static   type_items = [
+        "フォロワー"
+        , "アミュレット"
+        , "カウントダウンアミュレット"
+        , "スペル"
+      ];
+      //1から
+      static    rarity_items = [
+        "ブロンズ"
+        , "シルバー"
+        , "ゴールド"
+        , "レジェンド"
+      ];
+      static   cardset_dictionary = {
+        "90000": "トークン",
+        "10000": "ベーシックカード",
+        "10001": "クラシックカードパック",
+        "10003": "バハムート降臨",
+        "10002": "ダークネス・エボルヴ",
+        "10005": "ワンダーランド・ドリームズ",
+        "10004": "神々の騒嵐",
+        "10006": "星神の伝説",
+        "10007": "時空転生",
+        "70001": "構築済みⅠ",
+        "70002": "構築済みⅡ"
+      };
+   constructor(
         public name: string,
         public cost: number,
-        public rarerity: number,
+        public rarity: string,
         public life: number,
         public evoatk: number,
         public actor: string,
@@ -15,16 +67,17 @@ export class Card {
         public evoskilldescription: string,
         public tribe: string,
         public card_set: string,
-        public clan: string
+        public clan: string,
+        public type: string
     ) { }
     static jsonToCard(json: any): Card {
         return new Card(
             json['card_name'],
             json['cost'],
-            json['rarity'],
+            this.rarity_items[ (json['rarity']as number) - 1 ],
             json['life'],
             json['evo_atk'],
-            json['actor'],
+            json['actor_name'],
             json['atk'],
             json['description'],
             json['evo_description'],
@@ -32,8 +85,9 @@ export class Card {
             json['skill_disc'],
             json['evo_skill_disc'],
             json['tribe_name'],
-            json['card_set_id'],
-            json['clan'],
+            this.cardset_dictionary[json['card_set_id']],
+            this.clan_items[json['clan']],
+            this.type_items [(json['char_type'] as number) - 1 ],
         );
     }
 

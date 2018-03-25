@@ -1,16 +1,53 @@
 <div class="mat-typography">
-<h1 id="page-title">カードの詳細</h1>
-<h2>{{card.name}}</h2>
+    <h2>{{card.name}}</h2>
 </div>
 <div id="pic-container">
-<div  class="pic-item">
-<img  class="picture" [src]="'https://s3.ap-northeast-1.amazonaws.com/shadowverse-photos/card/'+ card.id + '0.jpg'">
-<p class="mat-body-1">"{{card.description}}"</p>
+    <div class="pic-item">
+        <img class="picture" [src]="'https://s3.ap-northeast-1.amazonaws.com/shadowverse-photos/card/'+ card.id + '0.jpg'">
+        <p class="mat-body-1">"{{card.description}}"</p>
+    </div>
+    <div *ngIf="card.type === 'フォロワー'" class="pic-item">
+        <img class="picture" [src]="'https://s3.ap-northeast-1.amazonaws.com/shadowverse-photos/card/'+ card.id + '1.jpg'">
+        <p class="mat-body-1">"{{card.evodescription}}"</p>
+    </div>
 </div>
-<div class="pic-item">
-<img class="picture" [src]="'https://s3.ap-northeast-1.amazonaws.com/shadowverse-photos/card/'+ card.id + '1.jpg'">
-<p class="mat-body-1">"{{card.evodescription}}"</p>
-</div>
+<mat-grid-list cols="3" rowHeight="100px">
+        <mat-grid-tile>
+                <div class="mat-typography">
+                        <h3>クラス</h3 >
+                        <span>{{card.clan}}</span>
+                    </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+                <div class="mat-typography">
+                        <h3 >種類</h3 >
+                        <span>{{card.type}}</span>
+                    </div  >
+        </mat-grid-tile>
+        <mat-grid-tile>
+                <div class="mat-typography">
+                        <h3 >レアリティ</h3 >
+                        <span>{{card.rarity}}</span>
+                    </div  >
+        </mat-grid-tile>
+        <mat-grid-tile>
+                <div class="mat-typography">
+                        <h3 >声優</h3 >
+                        <span>{{card.actor}}</span>
+                    </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+                <div class="mat-typography">
+                        <h3 >入手方法</h3 >
+                        <span>{{card.card_set}}</span>
+                    </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+                <div class="mat-typography">
+                        <h3 >種族</h3 >
+                        <span>{{card.tribe}}</span>
+                    </div>
+        </mat-grid-tile>
+</mat-grid-list>
 
-</div>
-
+    
