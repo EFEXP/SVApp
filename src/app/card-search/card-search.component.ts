@@ -19,6 +19,8 @@ export class CardSearchComponent implements OnInit {
   cardset_dictionary = new Map<string, string>();
 
   ngOnInit(): void {
+    this.query.clan = "8";
+    this.onSerchClick();
 
   }
   onSerchClick() {

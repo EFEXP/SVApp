@@ -1,9 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Http } from '@angular/http';
 import { Card } from '../card';
-import { GetCardService } from '../getCard.service';
-import { Query } from '../query';
-import { Router } from '@angular/router';
 import { DataKeeperService } from '../data-keeper.service';
 @Component({
   selector: 'app-root',
