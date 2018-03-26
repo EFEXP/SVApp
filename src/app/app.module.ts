@@ -61,6 +61,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MatPaginatorModule,
     MatProgressBarModule,
     MatDividerModule,
+    BrowserAnimationsModule
 
   ],
 

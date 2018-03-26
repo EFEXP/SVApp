@@ -16,7 +16,7 @@ export class CardListComponent  implements OnChanges{
    showCardList: Card[];
    ngOnChanges(changes: SimpleChanges) {
      if ( "cardList" in changes){
-      this.showCardList = this.cardList.slice(0, 15);
+      this.showCardList = this.cardList.slice(0, 20);
      }
   }
 
@@ -27,7 +27,7 @@ export class CardListComponent  implements OnChanges{
   getCardSliced(page: number): void {
     console.log(page);
    this.showCardList = 
-   this.cardList.slice(page  * 15, 15 + page * 15);
+   this.cardList.slice(page  * 20, 20 + page * 20);
   }
 
 

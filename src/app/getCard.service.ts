@@ -26,7 +26,7 @@ export class GetCardService {
            .map(
                responce => {
                    const obj = responce.json();
-                   return obj.map(it => Card.jsonToCard(it, this.keeper))  || {};
+                   return obj.map(it => Card.jsonToCard(it))  || {};
                }
    
            ).

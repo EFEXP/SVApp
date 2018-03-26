@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Http } from '@angular/http';
 import { Card } from '../card';
 import { GetCardService } from '../getCard.service';
@@ -10,7 +10,7 @@ import { DataKeeperService } from '../data-keeper.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit , OnDestroy{
   constructor( private keeper : DataKeeperService ) { }
   pageTitle = "";
   showFiller = false;
@@ -19,8 +19,10 @@ export class AppComponent implements OnInit{
     this.keeper.pagename.subscribe(it => this.pageTitle = it);
   
   }
-  
-
+ 
+  ngOnDestroy(): void {
+   this.keeper.pagename.unsubscribe();
+  }
 
  
   

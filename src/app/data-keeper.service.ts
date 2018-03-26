@@ -28,14 +28,12 @@ export class DataKeeperService implements OnInit {
     , "ビショップ"
     , "ネメシス"
   ];
-  //1から
   type_items = [
     "フォロワー"
     , "アミュレット"
     , "カウントダウンアミュレット"
     , "スペル"
   ];
-  //1から
   rarity_items = [
     "ブロンズ"
     , "シルバー"
@@ -59,7 +57,7 @@ export class DataKeeperService implements OnInit {
   cardList: Card[] = null;
   pagename: Subject<string> = new Subject<string>();
   constructor() { }
-  ngOnInit(): void {
+  ngOnInit(){
 
   }
 

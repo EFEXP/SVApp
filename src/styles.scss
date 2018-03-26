@@ -2,3 +2,18 @@
 @import '~normalize.css/normalize.css';
 @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 
+::-webkit-selection {
+    background-color: #CCE2FF;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  
+  ::-moz-selection {
+    background-color: #CCE2FF;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  
+  ::selection {
+    background-color: #CCE2FF;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  

@@ -27,5 +27,7 @@
   </mat-select>
 </mat-form-field>
 <mat-progress-bar mode="indeterminate" *ngIf="serching"></mat-progress-bar>
-<button mat-button (click)="onSerchClick()" type="submit" class="item" [disabled] ="serching" >検索</button>
+<div id="serch-button" class="item" >
+<button mat-raised-button color="primary" (click)="onSerchClick()" type="submit"   [disabled] ="serching" >検索</button>
+</div>
 </form>
