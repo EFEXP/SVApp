@@ -14,6 +14,7 @@ export class DataKeeperService implements OnInit {
     , "ワンダーランド・ドリームズ"
     , "星神の伝説"
     , "時空転生"
+    , "起源の光、終焉の闇"
     , "構築済み第一弾"
     , "構築済み第二弾"
   ];
@@ -50,6 +51,7 @@ export class DataKeeperService implements OnInit {
     "神々の騒嵐": "10004",
     "星神の伝説": "10006",
     "時空転生": "10007",
+    "起源の光、終焉の闇": "10008",
     "構築済み第一弾": "70001",
     "構築済み第二弾": "70002"
   };

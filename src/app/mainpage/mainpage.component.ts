@@ -17,7 +17,6 @@ export class MainpageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.keeper.pagename.next("全カード検索");
-    console.log("init");
      if (this.keeper.cardList != null){
         this.cardList =  this.keeper.cardList;
      }

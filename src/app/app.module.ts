@@ -10,7 +10,6 @@ import {MatButtonModule,
   MatInputModule, 
   MatCardModule
 } from '@angular/material';
-import { CardDetailComponent } from './card-detail/card-detail.component';
 import { FormsModule} from '@angular/forms';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
@@ -35,7 +34,6 @@ import {MatDividerModule} from '@angular/material/divider';
 ],
   declarations: [
     AppComponent,
-    CardDetailComponent,
     CardListComponent,
     CardSearchComponent,
     MainpageComponent,
