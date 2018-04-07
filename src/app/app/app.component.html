@@ -1,25 +1,27 @@
 <header>
-<mat-toolbar color="primary" class="toolbar">
-    <button type="button" aria-hidden="true" (click)="drawer.toggle()" id="toolbar-menu" mat-button>　<mat-icon aria-hidden="true" id="menu-icon">menu</mat-icon>  </button>
-<span routerLink="">  <h1 class="toolbar-item mat-h1">シャドバいらすとや</h1></span>
-</mat-toolbar>
+    <mat-toolbar color="primary" class="toolbar">
+    <!--      <button type="button" aria-hidden="true" (click)="drawer.toggle()" id="toolbar-menu" mat-button>
+            <mat-icon aria-hidden="true" id="menu-icon">menu</mat-icon>
+        </button>-->
+        <span routerLink="">
+            <h1 class="toolbar-item">シャドバいらすとや</h1>
+        </span>
+    </mat-toolbar>
 </header>
 
-<mat-drawer-container  autosize>
-    <mat-drawer #drawer class="sidenav" mode="side">
+<mat-drawer-container autosize>
+ <!--   <mat-drawer #drawer class="sidenav" mode="side">
         <p>Auto-resizing sidenav</p>
         <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
         <button (click)="showFiller = !showFiller" mat-raised-button>
-          Toggle extra text
+            Toggle extra text
         </button>
-      </mat-drawer>
-      <main>
-<div class="container">
-    <div class="mat-typography">
-        <h2 id="page-title">{{pageTitle}}</h2>
-        <mat-divider></mat-divider>
-      </div>
-  <router-outlet ></router-outlet>
-</div>
-</main>
+    </mat-drawer>-->
+    <main>
+        <div class="mat-typography container">
+            <h1 id="page-title headline">{{pageTitle}}</h1>
+            <mat-divider></mat-divider>
+            <router-outlet></router-outlet>
+        </div>
+    </main>
 </mat-drawer-container>

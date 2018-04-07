@@ -8,12 +8,21 @@
 }
 
 .picture {
-    max-width:70%;
+    max-width:80%;
  }
   @media  (min-width: 980px) {
     .picture {
-        max-width:300px;
+        width:400px;
+        height: 400px;
      }
     }
     
+.tile-title{
+    max-width: 100%;
+}
 
+
+.title{
+    max-width: 100%;
+    text-align: center;
+}

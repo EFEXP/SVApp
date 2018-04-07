@@ -55,7 +55,6 @@ export class DataKeeperService implements OnInit {
     "構築済み第一弾": "70001",
     "構築済み第二弾": "70002"
   };
-  card: Card = null;
   cardList: Card[] = null;
   pagename: Subject<string> = new Subject<string>();
   constructor() { }

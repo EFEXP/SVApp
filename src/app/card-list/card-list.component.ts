@@ -20,9 +20,9 @@ export class CardListComponent  implements OnChanges{
      }
   }
 
- clickCard(card){
-    this.keeper.card = card;
-    this.router.navigate(['/detail']);
+ clickCard(card: Card){
+    console.log(card.id);
+    this.router.navigate(['/detail', card.id]);
   }
   getCardSliced(page: number): void {
     console.log(page);

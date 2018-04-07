@@ -1,6 +1,6 @@
 <mat-paginator [length]="cardList.length" pageSize="20"  (page)="getCardSliced($event.pageIndex)">
     </mat-paginator>
 <div class="card-list-container">
-        <img  mat-card-image id="card_img" *ngFor="let card of showCardList" (click)="clickCard(card)" [src]="'https://shadowverse-portal.com/image/card/ja/C_'+ card.id + '.png'"  />
+        <img  id="card_img" *ngFor="let card of showCardList" (click)="clickCard(card)" [src]="'https://shadowverse-portal.com/image/card/ja/C_'+ card.id + '.png'"  />
 </div> 
 
